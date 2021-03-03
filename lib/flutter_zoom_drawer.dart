@@ -258,16 +258,7 @@ class _ZoomDrawerState extends State<ZoomDrawer>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      /// Detecting the slide amount to close the drawer in RTL & LTR
-      onPanUpdate: (details) {
-        if (_state == DrawerState.open && details.delta.dx < -6 && !_rtl ||
-            details.delta.dx < 6 && _rtl) {
-          toggle();
-        }
-      },
-      child: renderLayout(),
-    );
+    return renderLayout();
   }
 
   Widget renderLayout() {
